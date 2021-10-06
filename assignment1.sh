@@ -3,14 +3,18 @@
 i=1
 j=1
 
-while [ "$i" -le 9 ]
+read a
+read b
+
+while [ "$i" -le $a ]
 do
 	j=1
-	while [ "$j" -le 9 ]
+	while [ "$j" -le $b ]
 	do
-		echo $i" x "$j = expr $(($i * $j))
+		printf "%d x %d = %d " $i $j $(($i * $j))
 		j=$((j+1))
 	done
+	printf "\n"
 	i=$((i+1))
 done
 
